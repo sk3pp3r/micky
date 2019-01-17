@@ -21,7 +21,7 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 
-#vscode
+# ignore vscode ide files
 **/.vscode/*
 
 
