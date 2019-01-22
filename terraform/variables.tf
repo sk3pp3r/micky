@@ -24,26 +24,26 @@ variable "aws_secret_key" {
 */
 variable "credentialsfile" {
   default = "/home/jenkins/.aws/credentials" #replace your home directory
-  description = "where your access and secret_key are stored, you create the file when you run the aws config"
+  description = "Where your access and secret_key are stored, you create the file when you run the aws config"
 }
 
 variable "vpc-fullcidr" {
     default = "172.28.0.0/16"
-  description = "the vpc cdir"
+  description = "The vpc cdir"
 }
 variable "Subnet-Public-AzA-CIDR" {
   default = "172.28.0.0/24"
-  description = "the cidr of the subnet"
+  description = "The Public CIDR of the subnet"
 }
 variable "Subnet-Private-AzA-CIDR" {
   default = "172.28.3.0/24"
-  description = "the cidr of the subnet"
+  description = "The Private CIDR of the subnet"
 }
 variable "key_name" {
   default = "grafana01"
-  description = "the ssh key to use in the EC2 machines"
+  description = "The ssh key to use in the EC2 machines"
 }
 variable "DnsZoneName" {
   default = "haimcohen.internal"
-  description = "the internal dns name"
+  description = "The internal DNS name"
 }
