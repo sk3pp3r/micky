@@ -11,17 +11,7 @@ variable "AmiLinux" {
   }
   description = "I add only 3 regions (Virginia, Oregon, Ireland) to show the map feature but you can add all the regions that you need"
 }
-/*
-variable "aws_access_key" {
-  default = "xxxxx"
-  description = "the user aws access key"
-}
 
-variable "aws_secret_key" {
-  default = "xxxx"
-  description = "the user aws secret key"
-}
-*/
 variable "credentialsfile" {
   default = "/home/jenkins/.aws/credentials" #replace your home directory
   description = "Where your access and secret_key are stored, you create the file when you run the aws config"
