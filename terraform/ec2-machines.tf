@@ -4,7 +4,7 @@ resource "aws_instance" "database" {
   instance_type = "t2.micro"
   associate_public_ip_address = "false"
   subnet_id = "${aws_subnet.PrivateAZA.id}"
-  vpc_security_group_ids = ["${aws_security_group.Database.id}"]
+  vpc_security_group_ids = ["${aws_security_group.BackEnd.id}"]
   key_name = "${var.key_name}"
   tags {
         Name = "database"
@@ -29,7 +29,7 @@ resource "aws_instance" "grafana" {
   instance_type = "t2.micro"
   associate_public_ip_address = "true"
   subnet_id = "${aws_subnet.PublicAZA.id}"
-  vpc_security_group_ids = ["${aws_security_group.Grafana.id}"]
+  vpc_security_group_ids = ["${aws_security_group.FrontEnd.id}"]
   key_name = "${var.key_name}"
   tags {
         Name = "grafana"
@@ -52,7 +52,7 @@ resource "aws_instance" "elk" {
   instance_type = "t3.medium"
   associate_public_ip_address = "true"
   subnet_id = "${aws_subnet.PublicAZA.id}"
-  vpc_security_group_ids = ["${aws_security_group.Grafana.id}"]
+  vpc_security_group_ids = ["${aws_security_group.FrontEnd.id}"]
   key_name = "${var.key_name}"
   tags {
         Name = "elk"

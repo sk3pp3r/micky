@@ -3,7 +3,7 @@ resource "aws_security_group" "FrontEnd" {
   tags {
         Name = "FrontEnd"
   }
-  description = "ONLY HTTP/S CONNECTION INBOUD"
+  description = "FrontEnd Connection Inboud"
   vpc_id = "${aws_vpc.terraformmain.id}"
 
   ingress {
@@ -32,12 +32,12 @@ resource "aws_security_group" "FrontEnd" {
   }
 }
 
-resource "aws_security_group" "Database" {
-  name = "Database"
+resource "aws_security_group" "BackEnd" {
+  name = "BackEnd"
   tags {
-        Name = "Database"
+        Name = "BackEnd"
   }
-  description = "ONLY tcp CONNECTION INBOUND"
+  description = "BackEnd Connection Inbound"
   vpc_id = "${aws_vpc.terraformmain.id}"
   ingress {
       from_port = 3306
